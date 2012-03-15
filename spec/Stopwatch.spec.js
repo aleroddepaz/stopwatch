@@ -14,6 +14,8 @@ define([
 		});
 		describe("when it has been stopped", function() {
 			beforeEach(function() {
+				stopwatch.start();
+				waits(500);
 				stopwatch.stop();
 			});
 			it("should indicate that the timer isn't currently running", function() {
@@ -22,6 +24,7 @@ define([
 			it("should be possible to resume", function() {
 				stopwatch.start();
 				expect(stopwatch.isRunning).toBeTruthy();
+				expect(stopwatch.timer).toBeGreaterThan(500);
 			});
 		});
 		describe("when it has been cleared", function() {
@@ -29,7 +32,7 @@ define([
 				stopwatch.clear();
 			});
 			it("should indicate that the timer is equal to zero", function(){
-				expect(stopwatch.timer).toBeEqual(0);
+				expect(stopwatch.timer).toEqual(0);
 			});
 		});
 	});
