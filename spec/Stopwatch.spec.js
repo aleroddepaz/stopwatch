@@ -1,3 +1,8 @@
+function sleep(ms) {
+	var init = new Date().getTime();
+	while ((new Date().getTime() - init) < ms){}
+}
+
 define([
 	'src/Stopwatch'
 ], function(Stopwatch) {
@@ -10,30 +15,38 @@ define([
 		
 		it("should be able to start the timer", function() {
 			stopwatch.start();
-			expect(stopwatch.isRunning).toBeTruthy();
+			expect(stopwatch.isRunning()).toBeTruthy();
 		});
-		describe("when it has been stopped", function() {
+		describe("when it has been paused", function() {
 			beforeEach(function() {
 				stopwatch.start();
-				waits(500);
-				stopwatch.stop();
+				sleep(500);
+				stopwatch.pause();
 			});
 			it("should indicate that the timer isn't currently running", function() {
-				expect(stopwatch.isRunning).toBeFalsy();
+				expect(stopwatch.isRunning()).toBeFalsy();
 			});
 			it("should be possible to resume", function() {
 				stopwatch.start();
-				expect(stopwatch.isRunning).toBeTruthy();
-				expect(stopwatch.timer).toBeGreaterThan(500);
+				expect(stopwatch.isRunning()).toBeTruthy();
+				expect(stopwatch.get('timer')).toBeGreaterThan(490);
 			});
 		});
 		describe("when it has been cleared", function() {
 			beforeEach(function() {
 				stopwatch.clear();
 			});
-			it("should indicate that the timer is equal to zero", function(){
-				expect(stopwatch.timer).toEqual(0);
+			it("should indicate that the timer isn't currently running", function() {
+				expect(stopwatch.isRunning()).toBeFalsy();
 			});
+			it("should indicate that the timer is equal to zero", function(){
+				expect(stopwatch.get('timer')).toEqual(0);
+			});
+		});
+		
+		afterEach(function() {
+			stopwatch.clear();
+			stopwatch = null;
 		});
 	});
 });

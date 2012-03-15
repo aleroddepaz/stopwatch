@@ -14,11 +14,7 @@
 		"src/Stopwatch"
 	],
 	function(Stopwatch){
-		require.ready(function(){
-			stopwatch = new Stopwatch;
-			stopwatch.start();
-			setTimeout(function() {stopwatch.stop();},1100);
-		});
+		window.stopwatch = new Stopwatch;
 	}
 );
 })();

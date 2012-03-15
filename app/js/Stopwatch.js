@@ -1,24 +1,37 @@
-define(['backbone'], function(Backbone) {
+define([
+	'backbone'
+], function(Backbone) {
 
 	var Stopwatch = Backbone.Model.extend({
-		start : function() {
-			var start = new Date().getTime(), time = 0, elapsed = '0.0';
-			function instance() {
-				time += 100;
-				elapsed = Math.floor(time / 100) / 10;
-				if(Math.round(elapsed) == elapsed) {
-					elapsed += '.0';
-				}
-				document.title = elapsed;
-				var diff = (new Date().getTime() - start) - time;
-				window.setTimeout(instance, (100 - diff));
-			}
-			window.setTimeout(instance, 100);
+		defaults : {
+			timer : 0,
+			interval : null,
+			running : false,
+			elapsed : 0
 		},
-		stop : function() {
-			window.setTimeout = null;
+		isRunning : function(){
+			return this.get('running');
+		},
+		start : function (){
+			this.set({running : true, interval : this.something(this) });
+		},
+		pause : function() {
+			this.set({running : false});
+			clearInterval(this.get('interval'));
 		},
 		clear : function() {
+			if(this.isRunning()) this.pause();
+			this.set({timer : 0});
+		},
+		something : function(context){
+			console.log("doing something");
+			var interval = setInterval(function (){
+				var timer_local = context.get('timer') + 10;
+				var elapsed_local = timer_local / 1000;
+				if(Math.round(elapsed_local) == elapsed_local) { elapsed_local += '.00'; }
+				context.set({ timer : timer_local, elapsed : elapsed_local });
+			},10);
+			return interval;
 		}
 	});
 
