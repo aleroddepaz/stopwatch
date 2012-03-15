@@ -1,21 +1,20 @@
 (function(){
 	var js_path = '../app/js';
-	var lib_path = js_path + '/libs';
-	var src_path = js_path + '/src';
+	var libs_path = js_path + '/libs';
 	require(
 	{
 		paths: {
 			spec: '.',
-			src: src_path,
-			order: js_path + '/order',
-			backbone: lib_path + '/backbone/backbone',
-			underscore: lib_path + '/underscore/underscore'
+			src: js_path,
+			order: libs_path + '/order',
+			backbone: libs_path + '/backbone',
+			underscore: libs_path + '/underscore'
 		}
 	},
 	[
-		"order!jasmine/jasmine", 
-		"order!jasmine/jasmine-html",
-		"order!spec/Player.spec"
+		"order!jasmine-1.1.0/jasmine",
+		"order!jasmine-1.1.0/jasmine-html",
+		"order!spec/Stopwatch.spec"
 	],
 	function(){
 		require.ready(function(){

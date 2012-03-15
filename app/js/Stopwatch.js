@@ -4,14 +4,16 @@ define([
 	
 	var Stopwatch = Backbone.Model.extend({
 		start : function(){
-			
+			this.isRunning = true;
 		},
 		stop : function(){
-			
+			this.isRunning = false;
 		},
-		reset : function(){
-			
-		}
+		clear : function(){
+			this.timer = 0;
+		},
+		timer : 0,
+		isRunning : false
 	});
 	
 	return Stopwatch;
