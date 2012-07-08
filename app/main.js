@@ -11,10 +11,12 @@
 		}
 	},
 	[
-		"src/Stopwatch"
+		"src/Stopwatch",
+		"src/StopwatchView"
 	],
-	function(Stopwatch){
+	function(Stopwatch, StopwatchView){
 		window.stopwatch = new Stopwatch;
+		stopwatchView = new StopwatchView(window.stopwatch);
 	}
 );
 })();
