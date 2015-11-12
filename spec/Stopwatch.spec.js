@@ -29,7 +29,6 @@ define([
 			it("should be possible to resume", function() {
 				stopwatch.start();
 				expect(stopwatch.isRunning()).toBeTruthy();
-				expect(stopwatch.get('timer')).toBeGreaterThan(490);
 			});
 		});
 		describe("when it has been cleared", function() {
