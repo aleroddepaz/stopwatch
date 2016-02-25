@@ -1,7 +1,7 @@
 README
 ======
 
-Implementation of a stopwatch using **[backbone.js](http://backbonejs.org/)** framework, 
+Implementation of a stopwatch using **[Backbone.js](http://backbonejs.org/)**, 
 and **[Jasmine](http://pivotal.github.com/jasmine/)** for behavior-driven development.
 
 Sources:

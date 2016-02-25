@@ -1,6 +1,4 @@
-define([
-	'backbone', 'jquery', 'underscore'
-], function(Backbone, $, _) {
+define([ 'backbone', 'jquery', 'underscore' ], function(Backbone, $, _) {
 	var StopwatchView = Backbone.View.extend({
 		el : $('body'),
 		events : {

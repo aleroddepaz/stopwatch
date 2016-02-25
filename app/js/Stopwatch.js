@@ -1,7 +1,4 @@
-define([
-	'backbone', 'jquery'
-], function(Backbone, $) {
-
+define([ 'backbone' ], function(Backbone) {
 	var Stopwatch = Backbone.Model.extend({
 		defaults : {
 			timer : 0,

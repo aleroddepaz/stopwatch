@@ -1,22 +1,12 @@
-(function(){
-	var js_path = 'js';
-	var libs_path = js_path + '/libs';
-	require(
-	{
-		paths: {
-			src: js_path,
-			order: libs_path + '/order',
-			backbone: libs_path + '/backbone',
-			underscore: libs_path + '/underscore'
-		}
-	},
-	[
-		"src/Stopwatch",
-		"src/StopwatchView"
-	],
-	function(Stopwatch, StopwatchView){
-		window.stopwatch = new Stopwatch;
-		stopwatchView = new StopwatchView(window.stopwatch);
-	}
-);
-})();
+require.config({
+  paths : {
+    jquery: 'vendor/jquery/dist/jquery',
+    underscore: 'vendor/underscore/underscore',
+    backbone: 'vendor/backbone/backbone'
+  }
+});
+
+require([ 'js/Stopwatch', 'js/StopwatchView' ], function(Stopwatch, StopwatchView) {
+  var stopwatch = new Stopwatch;
+  var stopwatchView = new StopwatchView(stopwatch);
+});

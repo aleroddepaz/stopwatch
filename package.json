@@ -1,0 +1,30 @@
+{
+  "name": "stopwatch",
+  "version": "1.0.0",
+  "description": "Sample BackboneJS project",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleroddepaz/stopwatch.git"
+  },
+  "author": "aleroddepaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aleroddepaz/stopwatch/issues"
+  },
+  "homepage": "https://github.com/aleroddepaz/stopwatch#readme",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "gulp": "^3.9.1",
+    "karma": "^0.13.21",
+    "karma-jasmine": "^0.3.7",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-requirejs": "^0.2.5",
+    "jasmine-core": "^2.4.1",
+    "phantomjs-prebuilt": "^2.1.4",
+    "requirejs": "^2.1.22"
+  }
+}

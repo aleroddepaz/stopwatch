@@ -1,0 +1,23 @@
+{
+  "name": "stopwatch",
+  "homepage": "https://github.com/aleroddepaz/stopwatch",
+  "authors": [
+    "aleroddepaz <alexrdp90@gmail.com>"
+  ],
+  "description": "Sample BackboneJS project",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "spec"
+  ],
+  "dependencies": {
+    "backbone": "^1.2.3",
+    "requirejs": "^2.1.22",
+    "jquery": "^2.2.1"
+  }
+}
