@@ -1,12 +1,16 @@
 var gulp = require('gulp');
 var Server = require('karma').Server;
 
-/**
- * Run test once and exit
- */
 gulp.task('test', function (done) {
   new Server({
-    configFile: __dirname + '/karma.conf.js',
+    frameworks: ['jasmine', 'requirejs'],
+    files: [
+      'spec/test-main.js',
+      {pattern: 'app/**/*.js', included: false},
+      {pattern: 'spec/**/*.spec.js', included: false}
+    ],
+    exclude: ['app/main.js'],
+    browsers: ['PhantomJS'],
     singleRun: true
   }, done).start();
 });

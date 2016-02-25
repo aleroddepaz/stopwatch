@@ -1,4 +1,4 @@
-define([ 'js/Stopwatch' ], function(Stopwatch) {
+define([ 'jquery', 'js/Stopwatch' ], function($, Stopwatch) {
 
   function sleep(ms) {
     var init = new Date().getTime();
@@ -9,7 +9,9 @@ define([ 'js/Stopwatch' ], function(Stopwatch) {
     var stopwatch;
 
     beforeEach(function() {
-      stopwatch = new Stopwatch;
+      stopwatch = new Stopwatch({
+        timerContainer : $('<div/>')
+      });
     });
 
     it("should be able to start the timer", function() {
