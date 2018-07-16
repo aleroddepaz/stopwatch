@@ -2,7 +2,7 @@ README
 ======
 
 Implementation of a stopwatch using **[Backbone.js](http://backbonejs.org/)**, 
-and **[Jasmine](http://pivotal.github.com/jasmine/)** for behavior-driven development.
+and **[Jasmine](https://jasmine.github.io/)** for behavior-driven development.
 
 Sources:
 - <http://www.sitepoint.com/creating-accurate-timers-in-javascript>
